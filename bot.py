@@ -1,16 +1,3 @@
-# (c) @AbirHasan2005
-
-# This is Telegram Video Watermark Adder Bot's Source Code.
-# I Hardly Made This. So Don't Forget to Give Me Credits.
-# Done this Huge Task for Free. If you guys not support me,
-# I will stop making such things!
-
-# Edit anything at your own risk!
-
-# Don't forget to help me if I done any mistake in the codes.
-# Support Group: @linux_repo 
-# Bots Channel: @Discovery_Updates
-
 import os
 import json
 import time
@@ -252,13 +239,13 @@ async def SettingsBot(bot, cmd):
 	watermark_size = await db.get_size(cmd.from_user.id)
 	if int(watermark_size) == 5:
 		size_tag = "5%"
-	elif int(watermark_size) == 7:
-		size_tag = "7%"
-	elif int(watermark_size) == 10:
-		size_tag = "10%"
+	elif int(watermark_size) == 15:
+		size_tag = "15%"
+	elif int(watermark_size) == 20:
+		size_tag = "20%"
 	else:
-		size_tag = "7%"
-		watermark_size = "7"
+		size_tag = "5%"
+		watermark_size = "5"
 	## --- Next --- ##
 	await cmd.reply_text(
 		text="Here you can set your Watermark Settings:",
@@ -270,7 +257,7 @@ async def SettingsBot(bot, cmd):
 				[InlineKeyboardButton("Set Top Left", callback_data=f"position_5:5"), InlineKeyboardButton("Set Top Right", callback_data=f"position_main_w-overlay_w-5:5")],
 				[InlineKeyboardButton("Set Bottom Left", callback_data=f"position_5:main_h-overlay_h"), InlineKeyboardButton("Set Bottom Right", callback_data=f"position_main_w-overlay_w-5:main_h-overlay_h-5")],
 				[InlineKeyboardButton(f"Watermark Size - {size_tag}", callback_data="lel")],
-				[InlineKeyboardButton("Set 5%", callback_data=f"size_5"), InlineKeyboardButton("Set 7%", callback_data=f"size_7"), InlineKeyboardButton("Set 10%", callback_data=f"size_10")]
+				[InlineKeyboardButton("Set 5%", callback_data=f"size_5"), InlineKeyboardButton("Set 15%", callback_data=f"size_15"), InlineKeyboardButton("Set 20%", callback_data=f"size_20")]
 			]
 		)
 	)
